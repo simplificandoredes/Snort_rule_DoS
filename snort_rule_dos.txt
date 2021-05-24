@@ -1,0 +1,1 @@
+alert tcp $HOME_NET any -> $HOME_NET any (flags: S; msg:" Manual rule DoS flood"; flow:established; detection_filter: track by_src, count 60, seconds 10; sid:99901; rev:1;)
